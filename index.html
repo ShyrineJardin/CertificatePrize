@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!-- Coding By CodinFire - youtube.com/codingfire -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Certification</title>
+  </head>
+  <body>
+    <div class="container">
+      <button class="open">Claim Your Reward</button>
+   
+      
+      <div class="box">
+        <div class="imgBox">
+          <img src="https://i.postimg.cc/3rm6mxBh/Certificate.png" alt="" />
+        </div>
+        
+        <div class="btnContainer">
+          <button class="close">x</button>
+        </div>
+      </div>
+    </div>
+    
+    
+    <script src="./confetti.min.js"></script>
+    <script>
+      const openbtn = document.querySelector(".open");
+      const modal = document.querySelector('.box');
+      const closeBtn = document.querySelector('.close');
+      // we are saying that when we click This
+      openbtn.addEventListener("click", () => {
+        modal.classList.add('visible')
+        openbtn.classList.add('hidden');
+        const startit = () => {
+          setTimeout(function () {
+            confetti.start();
+          }, 1000);
+        };
+        // Stops
+        const stopit = () => {
+          setTimeout(function () {
+            confetti.stop();
+          }, 5000);
+        };
+        // playing start
+        startit();
+        // stoping it
+        stopit();
+      });
+      closeBtn.addEventListener('click', () => {
+        modal.classList.remove('visible')
+        openbtn.classList.remove('hidden');
+      })
+    </script>
+  </body>
+</html>
